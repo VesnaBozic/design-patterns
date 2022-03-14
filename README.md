@@ -7,39 +7,23 @@ The design pattern is a technique which used by the developer to solve the commo
 
 The design pattern is a part of the software development. It is a general repeatable solution for the potential problem in software development. We can follow the patterns details and apply a solution which suits our code.
 
+
 We may often confuse the patterns and algorithm, but both are separate approaches to solve repetitive problems. Algorithms generally define the clear set of the solution that can be implemented in some problems, where the patters are high-level description of the solution.
+
+***The pattern is not a specific piece of code, but a general concept for solving a particular problem. You can follow the pattern details and implement a solution that suits the realities of your own program.***
 
 For example - An algorithm is like a cooking recipe: we have a clear set of ingredients (or set of solutions) to cook something (problems or goals). On the other side, a pattern is like a blueprint: we can see what the result and its features are, but we can modify the order of implementation.
 
 All design pattern containt the following elements
 
-• Pattern name
+• Intent/purpose of the pattern briefly describes both the problem and the solution.
 
-• Intent/purpose
+• Motivation/context further explains the problem and the solution the pattern makes possible.
 
-• Aliases
+• Structure of classes shows each part of the pattern and how they are related.
 
-• Motivation/context
+• Sample code in one of the popular programming languages makes it easier to graso the idea behind the pattern.
 
-• Problem
-
-• Solution
-
-• Structure
-
-• Participants
-
-• Collaborations
-
-• Consequences/constraints
-
-• Implementation
-
-• Sample code
-
-• Known uses
-
-• Related patterns
 
 ## Why use design patterns?
 
