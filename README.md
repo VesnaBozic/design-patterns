@@ -42,7 +42,7 @@ Design patterns are also useful for the learning purpose because they introduce 
  
  Deals with the elements in the system - how they are created. 
  
- Some of the patterns : Constructor, Factory, Abstract, Prototype, Singleton, Builder.
+ Some of the patterns : Factory, Abstract, Prototype, Singleton, Builder.
 
 #### STRUCTURAL
 
@@ -95,6 +95,11 @@ Implement “lazy initialization” inside the static method. It should create a
 Make the constructor of the class private. The static method of the class will still be able to call the constructor, but not the other objects.
 
 Go over the client code and replace all direct calls to the singleton’s constructor with calls to its static creation method.
+
+## Factory Method
+
+Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+
 
 
 
