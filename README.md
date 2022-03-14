@@ -73,9 +73,48 @@ These design patterns are focused on the interaction between different objects i
 Some of the patterns : Iterator, Mediator, Observer, Visitor.
 
 
-***Beside these patterns there are architectural patterns. For example : Client-Server, REST, peer to peer
+***Beside these patterns there are architectural patterns. For example : Client-Server, REST, peer to peer***
 
 ## The Singleton Pattern
+
+Singleton is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
+
+The Singleton pattern lets you access some object from anywhere in the program.
+
+All implementations of the Singleton have these two steps in common:
+
+- Make the default constructor private, to prevent other objects from using the new operator with the Singleton class.
+
+- Create a static creation method that acts as a constructor. Under the hood, this method calls the private constructor to create an object and saves it in a static field. All following calls to this method return the cached object.
+
+If our code has access to the Singleton class, then it’s able to call the Singleton’s static method. So whenever that method is called, the same object is always returned.
+
+##### Example 
+
+```
+The government is an excellent example of the Singleton pattern. A country can have only one official government.
+```
+
+**Use the Singleton pattern when a class in your program should have just a single instance available to all clients; for example, a single database object shared by different parts of the program.**
+
+**The Singleton pattern disables all other means of creating objects of a class except for the special creation method. This method either creates a new object or returns an existing one if it has already been created.**
+
+
+#### How to implement
+
+Add a private static field to the class for storing the singleton instance.
+
+Declare a public static creation method for getting the singleton instance.
+
+Implement “lazy initialization” inside the static method. It should create a new object on its first call and put it into the static field. The method should always return that instance on all subsequent calls.
+
+Make the constructor of the class private. The static method of the class will still be able to call the constructor, but not the other objects.
+
+Go over the client code and replace all direct calls to the singleton’s constructor with calls to its static creation method.
+
+
+
+
 
 
 
