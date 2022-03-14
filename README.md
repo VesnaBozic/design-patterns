@@ -57,76 +57,25 @@ Design patterns are also useful for the learning purpose because they introduce 
  #### CREATIONAL
  
  Deals with the elements in the system - how they are created. 
+ 
+ Some of the patterns : Constructor, Factory, Abstract, Prototype, Singleton, Builder.
 
 #### STRUCTURAL
 
-The structural patterns deal with how classes and objects are composed. Objects can be
-composed using inheritance to obtain new functionality
+Deals with compostion. The structural patterns deal with how classes and objects are composed. Objects can be composed using inheritance to obtain new functionality. When we need change in one part of the system, the rest of the system doesn't need to change.
+
+Some of the patterns : Decorator, Facade, Flyweight, Adapter, Proxy.
 
 #### BEHAVIORAL PATTERNS
 
-These design patterns are focused on the interaction between objects
+These design patterns are focused on the interaction between different objects in the system.
+
+Some of the patterns : Iterator, Mediator, Observer, Visitor.
+
+
+***Beside these patterns there are architectural patterns. For example : Client-Server, REST, peer to peer
 
 ## The Singleton Pattern
 
-#### The problem
-
-One of the first debugging techniques we learn is simply printing the values of certain
-variables to the console. This helps us see what is going on inside our program. Looking at the output of our program at different points in its execution helps us locate and fix bugs swiftly.
-
-But us our code quickly becomes more complicates it becaomes littered with print statements, and that’s fine, until the moment we have to deploy our code. Running your code on a server, as a scheduled job on your own machine, or as a standalone piece of software on a client’s computer means that we can no longer rely on the console for feedback when something goes wrong.
-We have no way of knowing what went wrong or how to replicate the issue. This takes
-debugging from the realm of science straight into gambling. 
-
-The simplest solution is to replace print statements with a command to write the output to a file instead of to the console, like this:
-
-```
-def log_message(msg):
-    with open("filename.log", "a") as log_file:
-        log_file.write("{0}\n".format(msg))
-        
-log_message("save this for later")
-```
-
-Now you can see what is happening in the program when things go wrong. Our log
-file is like a black box on an aircraft: it keeps a tally of our program’s execution. When
-our program crashes, we can pop open the black box and see what happened leading
-up to the crash, as well as where you should start looking for a bug.
-
-The log_message function opens a file and appends the message passed to it to the
-file. This is the DRY principle in action. DRY stands for don’t repeat yourself.
-Whenever possible, We should repackage the code in such a way that you can reuse it without the need to copy and paste the lines somewhere else.
-
-#### Singleton Design Pattern in Python
-
-As the name describes itself, it is a way to provide one object of a particular type. It is used to describe the formation of a single instance of class while offering a single global access point to the object.
-
-It prevents the creation of multiple objects of the single class. The newly created object will be shared globally in an application.
-
-We can understand it with the simple example of Data connectivity. While setting up the database connection, we generate an exclusive Database connection object to work with the Database. We can perform every operation regarding database using that single connection object. This process is called a Single design pattern.
-
-One of the best benefits of using a singleton pattern is that we can restrict the shared resource and maintain integrity. It also prevents the overwriting in the current code by the other classes ensuing perilous or incompetent code. We can call the same object at multiple points of programs without worrying that it may be overwritten in the same points.
-
-#### Advantages of Singleton Patterns
-
-A class created using the singleton pattern violates the Single Responsibility Principle, which means it can solve two problems simultaneously.
-
-Single Pattern is difficult to implement in the multithreading environment because we need to ensure that the multithreading environment wouldn't create singleton objects several times.
-
-It makes the unit testing very hard because they follow the global state to an application.
-
-#### Disadvantages of Single Pattern
-
-A class created using the singleton pattern violates the Single Responsibility Principle which means it can solve two problems at a single time.
-
-Single Pattern is difficult to implement in the multithreading environment, because we need to ensure that multithreading environment wouldn't create singleton object several times.
-
-It makes the unit testing very hard because they follow the global state to an application
-
-#### Applicability of Design Pattern
-
-In the project, where we need a firm control over the global variables, we must use the Singleton Method.
-
-Singleton patterns solves the most occurring problems such as logging, caching, thread pools, and configuration setting and often used in conjunction with the Factory design pattern.
 
 
