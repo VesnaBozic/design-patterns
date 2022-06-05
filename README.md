@@ -167,3 +167,5 @@ The pattern allows you to produce different types and representations of an obje
 A composite or an aggregate object is what a builder generally builds.
 
 Formally, a builder pattern encapsulates or hides the process of building a complex object and separates the representation of the object and its construction. The separation allows us to construct different representations using the same construction process. Different representations implies creating objects of different classes that may share the same construction process.
+
+![builder](/builder.jpg)
