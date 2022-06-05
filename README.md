@@ -178,3 +178,11 @@ The simplest solution is to extend the base House class and create a set of subc
 There’s another approach that doesn’t involve breeding subclasses. You can create a giant constructor right in the base House class with all possible parameters that control the house object. While this approach indeed eliminates the need for subclasses, it creates another problem.
 
 ![builder](/builder2.jpg)
+
+In most cases most of the parameters will be unused, making the constructor calls pretty ugly. For instance, only a fraction of houses have swimming pools, so the parameters related to swimming pools will be useless nine times out of ten.
+
+***The Builder pattern suggests that you extract the object construction code out of its own class and move it to separate objects called builders.***
+
+![builder](/builder3.jpg)
+
+
