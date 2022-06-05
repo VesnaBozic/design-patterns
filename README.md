@@ -1,4 +1,4 @@
-# Design patterns in Python
+# Design patterns
 
 
 ## Definition
@@ -35,74 +35,125 @@ Design pattern also enhances the common understanding between the developer and 
 
 Design patterns are also useful for the learning purpose because they introduce the common problem that we may have ignored. They also allow thinking that area that may not have had the hand-on experience.
 
-
-## Clasification
-
- #### CREATIONAL
- 
- Deals with the elements in the system - how they are created. 
- 
- Some of the patterns : Factory, Abstract, Prototype, Singleton, Builder.
-
-#### STRUCTURAL
-
-Deals with compostion. The structural patterns deal with how classes and objects are composed. Objects can be composed using inheritance to obtain new functionality. When we need change in one part of the system, the rest of the system doesn't need to change.
-
-Some of the patterns : Decorator, Facade, Flyweight, Adapter, Proxy.
-
-#### BEHAVIORAL PATTERNS
-
-These design patterns are focused on the interaction between different objects in the system.
-
-Some of the patterns : Iterator, Mediator, Observer, Visitor.
+Problems that occur frequently enough in tech life usually have well-defined solutions, which are flexible, modular and more understandable. These solutions when abstracted away from the tactical details become design patterns.
 
 
-***Beside these patterns there are architectural patterns. For example : Client-Server, REST, peer to peer***
+## Example 
 
-## The Singleton Pattern
-
-Singleton is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
-
-The Singleton pattern lets you access some object from anywhere in the program.
-
-All implementations of the Singleton have these two steps in common:
-
-- Make the default constructor private, to prevent other objects from using the new operator with the Singleton class.
-
-- Create a static creation method that acts as a constructor. Under the hood, this method calls the private constructor to create an object and saves it in a static field. All following calls to this method return the cached object.
-
-If our code has access to the Singleton class, then it’s able to call the Singleton’s static method. So whenever that method is called, the same object is always returned.
-
-##### Example 
+The class constructor is one of the basic concepts in an object oriented language. The constructors help create objects of the class and can take in parameters.
 
 ```
-The government is an excellent example of the Singleton pattern. A country can have only one official government.
+public class Aircraft {
+
+    private String type;
+
+    public Aircraft(String type) {
+        this.type = type;
+    }
+}
 ```
 
-**Use the Singleton pattern when a class in your program should have just a single instance available to all clients; for example, a single database object shared by different parts of the program.**
 
-**The Singleton pattern disables all other means of creating objects of a class except for the special creation method. This method either creates a new object or returns an existing one if it has already been created.**
+In the above example, we have the default constructor for the class that takes in a single parameter the type of the aircraft. Now say after a few days, you realize you want to add additional properties to your Aircraft class. Say you want to add the color of the aircraft as a property, but you have already released a version of your library and can't modify the original constructor. The solution is to add another constructor with two parameters like so
+
+```
+public class Aircraft {
+
+    private String type;
+    private String color;
+
+    public Aircraft(String type) {
+        this.type = type;
+    }
+
+    public Aircraft(String type, String color) {
+        this.type = type;
+        this.color = color;
+    }
+}
+```
+
+If we continue this way we'll end up having a bunch of constructors with increasing number of arguments. It's called telescoping pattern.
+
+***The telescoping pattern*** is called an anti-pattern: how NOT to do things!
 
 
-#### How to implement
+### Tips for Object Oriented Design
 
-Add a private static field to the class for storing the singleton instance.
+- Separate out parts of code that vary or change from those that remain the same.
 
-Declare a public static creation method for getting the singleton instance.
+- Always code to an interface and not against a concrete implementation.
 
-Implement “lazy initialization” inside the static method. It should create a new object on its first call and put it into the static field. The method should always return that instance on all subsequent calls.
+- Encapsulate behaviors as much as possible.
 
-Make the constructor of the class private. The static method of the class will still be able to call the constructor, but not the other objects.
+- Favor composition over inheritance. Inheritance can result in explosion of classes and also sometimes the base class is fitted with new functionality that isn't applicable to some of its derived classes.
 
-Go over the client code and replace all direct calls to the singleton’s constructor with calls to its static creation method.
+- Interacting components within a system should be as loosely coupled as possible.
 
-## Factory Method
+- Ideally, class design should inhibit modification and encourage extension.
 
-Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+## Types of Design Patterns
 
+Design patterns for object orientated programs are divided into three broad categories :
 
+- Creational
 
+- Structural
 
+- Behavioural
+
+### Creational
+
+Creational design patterns relate to how objects are constructed from classes. New-ing up objects may sound trivial but unthoughtfully littering code with object instance creations can lead to headaches down the road. The creational design pattern come with powerful suggestions on how best to encapsulate the object creation process in a program.
+
+- Builder Pattern
+- ProtoType Pattern
+- Singleton Pattern
+- Abstract Factory Pattern
+
+### Structural 
+
+Structural patterns are concerned with the composition of classes i.e. how the classes are made up or constructed. These include:
+
+- Adapter Pattern
+
+- Bridge Pattern
+
+- Composite Pattern
+
+- Decorator Pattern
+
+- Facade Pattern
+
+- Flyweight Pattern
+ 
+- Proxy Pattern
+
+### Behavioral
+
+Behavioral design patterns dictate the interaction of classes and objects amongst eachother and the delegation of responsibility.
+
+- Interpreter Pattern
+
+- Template Pattern
+
+- Chain of Responsibility Pattern
+
+- Command Pattern
+
+- Iterator Pattern
+
+- Mediator Pattern
+
+- Memento Pattern
+
+- Observer Pattern
+
+- State Pattern
+
+- Strategy Pattern
+
+- Visitor Pattern
 
 
 
