@@ -158,9 +158,11 @@ Behavioral design patterns dictate the interaction of classes and objects amongs
 
 ### Builder Pattern
 
-A builder pattern is used to build objects.
+A builder pattern is creational design pattern used to build objects.
 
 Sometimes, the objects we create can be complex, made up of several sub-objects or require an elaborate construction process. The exercise of creating complex types can be simplified by using the builder pattern.
+
+The pattern allows you to produce different types and representations of an object using the same construction code.
 
 A composite or an aggregate object is what a builder generally builds.
 
